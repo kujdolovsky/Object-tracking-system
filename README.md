@@ -13,8 +13,8 @@ Sterowanie jest oparte na algorytmie predykcyjnym, dzięki czemu mozliwe jest wy
 ## 🎯 Cel projektu
 - Zaprojektowanie oraz wykonanie konstrukcji
 - dobór elementów elektronicznych oraz mikrokontrolera
-- Sterowanie predykcyjne
 - Algorytm rozpoznawania i śledzenia obiektów
+- Precyzyjne śledzenie obiektów w osi kamery
 
 ---
 
@@ -37,10 +37,14 @@ Sterowanie jest oparte na algorytmie predykcyjnym, dzięki czemu mozliwe jest wy
 - Zaprojektowałem i zaimplementowałem układ regulacji predykcyjnej
 
 ---
+Schemat układu sterowania:
+<img width="1537" height="872" alt="image" src="https://github.com/user-attachments/assets/1930986f-356c-4dd5-bfc1-bfababd75abf" />
+
+
 
 ## 📊 Wyniki
 
-### Odpowiedź skokowa
+### Wykrywanie obiektów
 - czas regulacji: ~2 s dla skoku 25 mm
 - test dla przejścia z (25,25) → (0,0)
 
@@ -64,21 +68,16 @@ Sterowanie jest oparte na algorytmie predykcyjnym, dzięki czemu mozliwe jest wy
 ---
 
 ## 🌀 Demo wideo (kliknij, aby obejrzeć)
-Układ stabilizuje kulkę, kompensuje zakłócenia oraz realizuje zadane trajektorie ruchu.
 
-### Trajektoria kulki
+
+### Sledzenie czlowieka 
 [![Trajektoria](https://img.youtube.com/vi/QgTJa6kDOz0/0.jpg)](https://www.youtube.com/watch?v=QgTJa6kDOz0)
 
-### Reakcja na zakłócenia
-[![Zakłócenia](https://img.youtube.com/vi/Sv3K1zqYGdE/0.jpg)](https://www.youtube.com/watch?v=Sv3K1zqYGdE)
-
-### Stabilizacja i docisk kulki
-[![Demo](https://img.youtube.com/vi/wO5LeluoGk4/0.jpg)](https://www.youtube.com/watch?v=wO5LeluoGk4)
 
 ---
 
 ## 📉 Ograniczenia
-- odchyłka statyczna do ~5 mm w stanie ustalonym
+-zbyt wolna kamera
 
 ---
 
