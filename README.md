@@ -1,90 +1,95 @@
-# 🎯 System śledzenia obiektów (Pan-Tilt) z wykorzystaniem wizji komputerowej
+# 🎯 Object Tracking System (Pan-Tilt) using Computer Vision
 
-## 📌 Opis projektu
-Projekt przedstawia system śledzenia obiektów w czasie rzeczywistym oparty na platformie typu **pan-tilt (2 DOF)**.  
-Układ wykorzystuje kamerę oraz wskaźnik laserowy zamocowane na ruchomej konstrukcji napędzanej silnikami krokowymi.
+## 📌 Overview
+This project presents a real-time object tracking system based on a **pan-tilt platform (2 DOF)**.  
+The system uses a camera and a laser pointer mounted on a movable structure driven by stepper motors.
 
-Detekcja i śledzenie obiektów realizowane są z wykorzystaniem metod wizji komputerowej (**OpenCV + YOLO**), natomiast sterowanie opiera się na podejściu predykcyjnym, co pozwala ograniczyć opóźnienia i zwiększyć dokładność śledzenia.
+Object detection and tracking are implemented using computer vision methods (**OpenCV + YOLO**), while control is based on a predictive approach to reduce delay and improve tracking accuracy.
 
 <img width="436" height="495" alt="image" src="https://github.com/user-attachments/assets/0d5542f8-10fc-4622-b5b3-cfccec90ea6a" />
 
 ---
 
-## 🎯 Cel projektu
-- Projekt i wykonanie konstrukcji mechanicznej (2 DOF)
-- Dobór elektroniki i mikrokontrolera
-- Implementacja algorytmu detekcji i śledzenia obiektów
-- Opracowanie układu sterowania zapewniającego płynne i precyzyjne śledzenie
+## 🎯 Objectives
+- Design and build the mechanical structure (2 DOF)
+- Selection of electronics and microcontroller
+- Implementation of object detection and tracking algorithms
+- Development of a control system ensuring smooth and precise tracking
 
 ---
 
-## 🛠️ Wykorzystane narzędzia i technologie
+## 🛠️ Tools & Technologies
 - **Python** (OpenCV, YOLO, NumPy)
 - **MATLAB / Simulink**
 - **STM32 (STM32CubeIDE)**
 - **Arduino IDE (C++)**
-- **Filtr Kalmana**
-- Sterowanie silnikami krokowymi
+- **Kalman Filter**
+- Stepper motor control
 
 ---
 
-## 🧠 Zakres mojej pracy
-- Opracowanie modelu matematycznego układu
-- Projekt i wykonanie konstrukcji mechanicznej
-- Implementacja sterowania silnikami krokowymi
-- Opracowanie algorytmu wizyjnego (detekcja + tracking)
-- Implementacja filtru Kalmana do estymacji położenia
-- Projekt i implementacja regulatora predykcyjnego
+## 🧠 My Contributions
+- Developed a mathematical model of the system
+- Designed and built the mechanical structure
+- Implemented stepper motor control
+- Developed the vision algorithm (detection + tracking)
+- Implemented a Kalman filter for position estimation
+- Designed and implemented a predictive controller
 
 ---
 
-## ⚙️ Architektura systemu
-Schemat układu sterowania:
+## ⚙️ System Architecture
+Control system diagram:
 
 <img width="1576" height="891" alt="image" src="https://github.com/user-attachments/assets/bf109700-8189-4302-a185-9b1dec36c438" />
 
-
 ---
-## Schemat modelu regulatora predykcyjnego 1 osi w Simulinku:
-Regulator korzystając z danych o aktualnej pozycji obiektu oraz platformy wylicza błąd śledzenia jaki wystąpi po czasie opóźnień, błąd ten trafia następnie do regulatora PID, który steruje prędkością silnika.
-Szczegóły dostępne przy kontakcie ze mną.
+
+## 📐 Predictive Controller Model (Simulink)
+The controller estimates the future tracking error based on current object and platform position.  
+This predicted error is then fed into a PID controller, which controls motor velocity.
+
+More details available upon request.
 
 <img width="1706" height="639" alt="image" src="https://github.com/user-attachments/assets/2ab24032-dfab-4c39-b323-b9f10e0baa82" />
 
-## 📊 Dotychczasowe wyniki
-### Wyniki symulacji (sterowanie z predykcją), Simulink
-Weryfikacja działania regulatora predykcyjnego, trajektoria z symulowanymi zakłóceniami.
-W symulacji regulator spełnia swoją funkcję bardzo dobrze.
+---
+
+## 📊 Results
+
+### Simulation Results (Predictive Control, Simulink)
+Validation of predictive controller performance under simulated disturbances.  
+The controller performs effectively and maintains stable tracking.
 
 <img width="1919" height="923" alt="image" src="https://github.com/user-attachments/assets/859c2298-bada-4fa8-af31-b4bce74b52ea" />
 
+---
 
+## 🎥 Video Demonstration
 
-## 🌀 Demo wideo (kliknij, aby obejrzeć)
+### Object Tracking (earlier predictive control version)
+The system detects and tracks objects with satisfactory accuracy.  
+Currently working on improving control performance by implementing an enhanced predictive controller.
 
-### Śledzenie obiektu z uzyciem starego algorytmu predykcyjnego (bez kompensacji zakłóceń mechanicznych)
- System działa, wykrywa obiekty i już teraz jest w stanie śledzić je z zadowalającą dokładnością,
- aktualnie pracuję nad udoskonaleniem systemu sterowania poprzez implementację nowego regulatora predykcyjnego. 
- 
 [![Demo](https://img.youtube.com/vi/rupabkPK9xA/0.jpg)](https://youtu.be/rupabkPK9xA)
 
 ---
 
-## 📉 Ograniczenia
-- Ograniczona częstotliwość odświeżania kamery
-- Niedoskonałości mechaniczne wpływające na precyzję
-- Opóźnienia wynikające z przetwarzania obrazu
+## 📉 Limitations
+- Limited camera frame rate
+- Mechanical imperfections affecting precision
+- Delays caused by image processing
 
 ---
 
-## 🚀 Dalszy rozwój
-- Zastosowanie szybszej kamery global shutter
-- Lepsza kalibracja i sztywniejsza konstrukcja
-- Lepsza regulacja algorytmu sterowania predykcyjnego
-- Optymalizacja kodu wizyjnego pod kątem wydajności
-- Dodanie enkoderów absolutnych
+## 🚀 Future Improvements
+- Use of a high-speed global shutter camera
+- Improved mechanical rigidity and calibration
+- Further tuning of the predictive control algorithm
+- Optimization of vision code for performance
+- Integration of absolute encoders
 
 ---
 
-## 📬 Kontakt
-Jeśli masz pytania lub chcesz pogadać o projekcie — śmiało napisz 🙂
+## 📬 Contact
+Feel free to reach out if you have any questions or would like to discuss the project.
