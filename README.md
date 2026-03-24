@@ -48,19 +48,24 @@ Schemat układu sterowania:
 ## Schemat modelu regulatora predykcyjnego 1 osi w Simulinku:
 Regulator korzystając z danych o aktualnej pozycji obiektu oraz platformy wylicza błąd śledzenia jaki wystąpi po czasie opóźnień, błąd ten trafia następnie do regulatora PID, który steruje prędkością silnika.
 Szczegóły dostępne przy kontakcie ze mną.
+
 <img width="1706" height="639" alt="image" src="https://github.com/user-attachments/assets/2ab24032-dfab-4c39-b323-b9f10e0baa82" />
 
 ## 📊 Dotychczasowe wyniki
 ### Wyniki symulacji (sterowanie z predykcją), Simulink
 Weryfikacja działania regulatora predykcyjnego, trajektoria z symulowanymi zakłóceniami.
 W symulacji regulator spełnia swoją funkcję bardzo dobrze.
+
 <img width="1919" height="923" alt="image" src="https://github.com/user-attachments/assets/859c2298-bada-4fa8-af31-b4bce74b52ea" />
 
 
 
 ## 🌀 Demo wideo (kliknij, aby obejrzeć)
 
-### Śledzenie obiektu z uzyciem algorytmu PID (jeszcze bez predykcji)
+### Śledzenie obiektu z uzyciem starego algorytmu predykcyjnego (bez kompensacji zakłóceń mechanicznych)
+ System działa, wykrywa obiekty i już teraz jest w stanie śledzić je z zadowalającą dokładnością,
+ aktualnie pracuję nad udoskonaleniem systemu sterowania poprzez implementację nowego regulatora predykcyjnego. 
+ 
 [![Demo](https://img.youtube.com/vi/rupabkPK9xA/0.jpg)](https://youtu.be/rupabkPK9xA)
 
 ---
